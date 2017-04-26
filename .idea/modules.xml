@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LibrarySourse.iml" filepath="$PROJECT_DIR$/LibrarySourse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/upversionlibrary/upversionlibrary.iml" filepath="$PROJECT_DIR$/upversionlibrary/upversionlibrary.iml" />
+    </modules>
+  </component>
+</project>
