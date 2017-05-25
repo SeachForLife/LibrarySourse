@@ -53,6 +53,8 @@ public abstract class AVersionService extends Service {
 
     public abstract void onResponses(AVersionService service, String response);
 
+    public abstract void onErrorBack(AVersionService service, Exception e);
+
     StringCallback stringCallback = new StringCallback() {
         @Override
         public void onSuccess(String s, Call call, Response response) {
@@ -61,16 +63,17 @@ public abstract class AVersionService extends Service {
 
         @Override
         public void onError(Call call, Response response, Exception e) {
-            long pauseTime=versionParams.getPauseRequestTime();
-            //不为-1 间隔请求
-            if(pauseTime!=-1) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        requestVersionUrlSync();
-                    }
-                }, pauseTime);
-            }
+            onErrorBack(AVersionService.this, e);
+//            long pauseTime=versionParams.getPauseRequestTime();
+//            //不为-1 间隔请求
+//            if(pauseTime!=-1) {
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        requestVersionUrlSync();
+//                    }
+//                }, pauseTime);
+//            }
 
         }
     };

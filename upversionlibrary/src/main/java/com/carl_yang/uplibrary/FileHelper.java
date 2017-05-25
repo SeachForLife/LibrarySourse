@@ -12,9 +12,9 @@ public class FileHelper {
 
 
 		if (checkSDCard()) {
-			appCachePath = Environment.getExternalStorageDirectory() + "/AllenVersionPath/" ;
+			appCachePath = Environment.getExternalStorageDirectory() + "/UpApkPath/";
 		} else {
-			appCachePath = Environment.getDataDirectory().getPath() + "/AllenVersionPath/" ;
+			appCachePath = Environment.getDataDirectory().getPath() + "/UpApkPath/";
 		}
 		File file = new File(appCachePath);
 		if (!file.exists()) {
